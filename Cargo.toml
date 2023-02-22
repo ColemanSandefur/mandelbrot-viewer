@@ -1,0 +1,18 @@
+[package]
+name = "mandelbrot_set"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+opengl-renderer = {path="../opengl-renderer"}
+egui = { version = "0.20.1", default-features = false, features = [
+  "bytemuck",
+] }
+bytemuck = "1.7"
+glium = "0.32"
+nalgebra="0.32.1"
+russimp={version = "1", features = ["prebuilt"]}
+rayon = "1.6.1"
+image = "0.24.5"
