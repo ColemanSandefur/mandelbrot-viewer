@@ -16,13 +16,14 @@ void main() {
     int max_iter = 100;
     int iter = 0;
 
-    // Use the translated position as the complex number input
-    float zReal = TransPos.x;
-    float zImag = TransPos.y;
+    // Use the translated position as the complex number input.
+    // Store the original 'c value' for use later.
+    float cReal = TransPos.x;
+    float cImag = TransPos.y;
 
-    // store the original position for use later
-    float cReal = zReal;
-    float cImag = zImag;
+    // Will hold the most recent iteration of the series
+    float zReal = cReal;
+    float zImag = cImag;
 
     // create a rough approximation on if the set is stable
     for (iter = 0; iter < max_iter; iter++) {

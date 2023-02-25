@@ -16,8 +16,9 @@ void main()
     Position = position;
 
     // TransPos is the zoomed and translated position of the vertex. Mimics the 'zoom' effect
-    TransPos = (position.xy * zoom + screen_pos);
-    TransPos.x = TransPos.x * screen_dim.x / screen_dim.y;
+    TransPos = (position.xy * zoom);
+    TransPos.x = TransPos.x * (screen_dim.x / screen_dim.y); // keep aspect ratio
+    TransPos +=  screen_pos;
 
     gl_Position =  vec4(position, 1.0);
 }
